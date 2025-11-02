@@ -244,11 +244,11 @@ class Commander():
     def print_help(self):
         def fxr_title(self, data):
             if data.get("required"):
-                a_title = f"{self.style(f'[{z} {"|".join(data["required"])}]', "title")}"
+                a_title = self.style(f'[{z} {"|".join(data["required"])}]', "title")
             elif data.get("metavar"):
-                a_title = f"{self.style(f'[{z} {data["metavar"]}]', "title", 0)}"
+                a_title = self.style(f'[{z} {data["metavar"]}]', "title", 0)
             else:
-                a_title = f"{self.style(f'[{z}]', "title")}"
+                a_title = self.style(f'[{z}]', "title")
             return a_title
 
         def fxr_options(self, data, flag):
@@ -341,8 +341,8 @@ class Commander():
                 _xcount = _count-ticker
                 self.len_axt, self.len_caxt, self.len_args, self.len_coms = 0, 0, 0, 0
 
-        print_out.append(f"Usage: {_prog_name} {"".join(self.title_args)}\n")
-        print_out.append(f"{_description}\n")
+        print_out.append(f'Usage: {_prog_name} {"".join(self.title_args)}\n')
+        print_out.append(f'{_description}\n')
 
         for x in _options:
             print_out.append("".join(x))
